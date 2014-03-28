@@ -1,0 +1,10 @@
+.recently-added { background-color: orange; }
+
+body
+{
+	padding: 3%;
+	font-family: "courier", monospace;
+}
+
+h1#home-page-title { background-color: orange; }
+div.my-special-pony { height: 200px; }
