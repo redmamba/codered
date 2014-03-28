@@ -1,0 +1,136 @@
+<!-- #bbinclude "includes/header.html"
+#title#="Testing stuff on this page"
+ -->
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Redmamba Studio: Testing stuff on this page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style>
+      body {padding-top: 60px;}
+    </style>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top my-navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">Redmamba Studio</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="about.html">About</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="films.html">Films</a></li>
+              <li><a href="sound.html">Sound</a></li>
+              <li><a href="codex.html">Codex</a></li>
+              <li><a href="pictures.html">Pictures</a></li>
+              <li><a href="references.html">References</a></li>
+              <li><a href="lab.html">Lab</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"> <!-- start of main content -->
+<!-- end bbinclude -->
+
+      <h3>A page for testing stuff</h3>
+
+
+
+
+
+<style>
+#map{
+	width:500px;
+	height:500px;
+}
+</style>
+
+
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+
+<script>
+	function findYou(){
+		if(!navigator.geolocation.getCurrentPosition(showPosition,
+	 noLocation, {maximumAge : 1200000, timeout : 30000})){
+	 
+ 	document.getElementById("lat").innerHTML="This browser does not support geolocation.";
+ }
+	}
+	function showPosition(location){
+		var latitude = location.coords.latitude;
+		var longitude = location.coords.longitude;
+		var accuracy = location.coords.accuracy;
+		//build the map
+		var position = new google.maps.LatLng(latitude, longitude);
+		//build the options
+		var myOptions = {
+		  zoom: 18,
+		  center: position,
+		  mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+	//display the map
+	var map = new google.maps.Map(document.getElementById("map"),
+        myOptions);
+		
+		document.getElementById("lat").innerHTML=
+		"Your latitude is " + latitude;
+		document.getElementById("lon").innerHTML=
+		"Your longitude is " + longitude;
+		document.getElementById("acc").innerHTML=
+		"Accurate within " + accuracy + " meters";
+	}
+	function noLocation(locationError){
+		switch(locationError.code){
+		case locationError.PERMISSION_DENIED:
+			document.getElementById("lat").innerHTML=
+				"You have denied my request for your location.";
+				break;
+		case locationError.POSITION_UNAVAILABLE:
+			document.getElementById("lat").innerHTML=
+				"Your position is not available at this time.";
+				break;
+	 case locationError.TIMEOUT: 
+			document.getElementById("lat").innerHTML=
+				"My request for your location took too long.";
+				break;
+		default:
+			document.getElementById("lat").innerHTML=
+				"An unexpected error occurred.";
+		}
+	}
+</script>
+</head> 
+<body>
+<h4>Your Location</h4>
+<script>
+	findYou();
+</script>
+<p id="lat">&nbsp;</p>
+<p id="lon">&nbsp;</p>
+<p id="acc">&nbsp;</p>
+<div id="map">
+
+
+
+
+
+<!-- #bbinclude "includes/footer.html" -->
+    </div> <!-- end of container div -->
+  </body>
+</html>
+<!-- end bbinclude -->
+    

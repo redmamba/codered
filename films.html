@@ -1,0 +1,193 @@
+<!-- #bbinclude "includes/header.html"
+#title#="Films"
+ -->
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Redmamba Studio: Films</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style>
+      body {padding-top: 60px;}
+    </style>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top my-navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">Redmamba Studio</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="about.html">About</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="films.html">Films</a></li>
+              <li><a href="sound.html">Sound</a></li>
+              <li><a href="codex.html">Codex</a></li>
+              <li><a href="pictures.html">Pictures</a></li>
+              <li><a href="references.html">References</a></li>
+              <li><a href="lab.html">Lab</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"> <!-- start of main content -->
+<!-- end bbinclude -->
+
+    <ul id="vimeo-target" style="background-color:beige;"></ul>
+
+    <h3>Film stuff</h3>    
+ 
+ <p> Nothing like the old animation films. 1923! Storytelling at his best with no distractions! </p>
+ <iframe src="http://archive.org/embed/FelixTheCat-FelixGetsBroadcasted1923" width="500" height="400" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>  
+   
+    
+<video width="500" height= "400" controls poster="images\film.jpg">
+<source src="films\felix_the_cat.mp4" type="video/mp4">
+<source src="films\felix_the_cat.ogg" type='video/ogg; codecs=“theora,vorbis”'>
+</video>
+
+
+    <!-- #bbinclude "includes/vimeoembed.html" #id#="69435982" -->
+<div class="media my-vimeo-embed">
+  <a class="pull-left" href="#">    
+    <iframe class="media-object" src="http://player.vimeo.com/video/69435982?color=ff3333" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen title="http://vimeo.com/69435982"></iframe>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading" id="my-vimeo-embed-title-69435982"></h4>
+    
+    <div id="my-vimeo-embed-69435982"><noscript>Watch my great film on Vimeo at  http://vimeo.com/69435982</noscript></div>
+    
+ <script>
+$.getJSON('http://vimeo.com/api/v2/video/69435982.json', function(data) {
+  console.log(data);
+  
+  var my_title = data[0].title;
+  var my_description = data[0].description;
+  var my_duration_in_seconds = data[0].duration;
+  var my_width = data[0].width;
+  var my_height = data[0].height;
+  
+  $('#my-vimeo-embed-title-69435982').append(my_title);  
+  $('#my-vimeo-embed-69435982').append('<p>' + my_description + ' <time>' + my_duration_in_seconds + ' seconds</time></p>');
+  
+});
+</script>
+
+  </div>
+</div>
+<!-- end bbinclude -->
+    
+    <!-- #bbinclude "includes/vimeoembed.html"
+#id#="54900227"
+-->
+<div class="media my-vimeo-embed">
+  <a class="pull-left" href="#">    
+    <iframe class="media-object" src="http://player.vimeo.com/video/54900227?color=ff3333" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen title="http://vimeo.com/54900227"></iframe>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading" id="my-vimeo-embed-title-54900227"></h4>
+    
+    <div id="my-vimeo-embed-54900227"><noscript>Watch my great film on Vimeo at  http://vimeo.com/54900227</noscript></div>
+    
+ <script>
+$.getJSON('http://vimeo.com/api/v2/video/54900227.json', function(data) {
+  console.log(data);
+  
+  var my_title = data[0].title;
+  var my_description = data[0].description;
+  var my_duration_in_seconds = data[0].duration;
+  var my_width = data[0].width;
+  var my_height = data[0].height;
+  
+  $('#my-vimeo-embed-title-54900227').append(my_title);  
+  $('#my-vimeo-embed-54900227').append('<p>' + my_description + ' <time>' + my_duration_in_seconds + ' seconds</time></p>');
+  
+});
+</script>
+
+  </div>
+</div>
+<!-- end bbinclude -->
+
+<!-- #bbinclude "includes/vimeoembed.html"
+#id#="65936836"
+-->
+<div class="media my-vimeo-embed">
+  <a class="pull-left" href="#">    
+    <iframe class="media-object" src="http://player.vimeo.com/video/65936836?color=ff3333" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen title="http://vimeo.com/65936836"></iframe>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading" id="my-vimeo-embed-title-65936836"></h4>
+    
+    <div id="my-vimeo-embed-65936836"><noscript>Watch my great film on Vimeo at  http://vimeo.com/65936836</noscript></div>
+    
+ <script>
+$.getJSON('http://vimeo.com/api/v2/video/65936836.json', function(data) {
+  console.log(data);
+  
+  var my_title = data[0].title;
+  var my_description = data[0].description;
+  var my_duration_in_seconds = data[0].duration;
+  var my_width = data[0].width;
+  var my_height = data[0].height;
+  
+  $('#my-vimeo-embed-title-65936836').append(my_title);  
+  $('#my-vimeo-embed-65936836').append('<p>' + my_description + ' <time>' + my_duration_in_seconds + ' seconds</time></p>');
+  
+});
+</script>
+
+  </div>
+</div>
+<!-- end bbinclude -->
+
+<!-- #bbinclude "includes/vimeoembed.html"
+    #id#="54415488"
+-->
+<div class="media my-vimeo-embed">
+  <a class="pull-left" href="#">    
+    <iframe class="media-object" src="http://player.vimeo.com/video/54415488?color=ff3333" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen title="http://vimeo.com/54415488"></iframe>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading" id="my-vimeo-embed-title-54415488"></h4>
+    
+    <div id="my-vimeo-embed-54415488"><noscript>Watch my great film on Vimeo at  http://vimeo.com/54415488</noscript></div>
+    
+ <script>
+$.getJSON('http://vimeo.com/api/v2/video/54415488.json', function(data) {
+  console.log(data);
+  
+  var my_title = data[0].title;
+  var my_description = data[0].description;
+  var my_duration_in_seconds = data[0].duration;
+  var my_width = data[0].width;
+  var my_height = data[0].height;
+  
+  $('#my-vimeo-embed-title-54415488').append(my_title);  
+  $('#my-vimeo-embed-54415488').append('<p>' + my_description + ' <time>' + my_duration_in_seconds + ' seconds</time></p>');
+  
+});
+</script>
+
+  </div>
+</div>
+<!-- end bbinclude -->
+ 
+    <!-- #bbinclude "includes/footer.html" -->
+    </div> <!-- end of container div -->
+  </body>
+</html>
+<!-- end bbinclude -->
+</body>
+</html>

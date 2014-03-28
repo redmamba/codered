@@ -1,0 +1,15 @@
+<!--- https://dev.twitter.com/docs/embedded-tweets 
+can only do one tweet per page so far -->
+<div id="tweet_div" class="my-twitter-embed"></div>
+<script>
+$.ajax({ 
+    type: 'GET', 
+    url: 'https://api.twitter.com/1/statuses/oembed.json?id=#id#', 
+    data: { get_param: 'value' }, 
+    dataType: 'json',
+    success: function(data){
+            $("#tweet_div").html(data.html);
+        }
+});
+
+</script>

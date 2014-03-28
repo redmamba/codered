@@ -1,0 +1,144 @@
+<!-- #bbinclude "includes/header.html"
+#title#="Sound"
+ -->
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <title>Redmamba Studio: Sound</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <style>
+      body {padding-top: 60px;}
+    </style>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top my-navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="index.html">Redmamba Studio</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="about.html">About</a></li>
+              <li><a href="notes.html">Notes</a></li>
+              <li><a href="films.html">Films</a></li>
+              <li><a href="sound.html">Sound</a></li>
+              <li><a href="codex.html">Codex</a></li>
+              <li><a href="pictures.html">Pictures</a></li>
+              <li><a href="references.html">References</a></li>
+              <li><a href="lab.html">Lab</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"> <!-- start of main content -->
+<!-- end bbinclude -->
+
+      <h3>Sound stuff</h3>
+      <quote>"Whenever we hear sounds we are changed, we are no longer the same after having heard certain sounds"</quote>
+
+<h4>Working with Sound</h4>
+
+<p>It cannot be said often enough: Audio is more important than video. Audiences will tolerate shockingly poor quality video (see Paranormal Activity, Cloverfield, or Blair Witch Project for proof), but no one will sit through even three minutes on YouTube if the audio is hard to hear. You can always close your eyes, but closing your ears is far more difficult. And while the images carry the basic information of a scene, the sound invariably carries the emotional content. If seeing is believing, then hearing is feeling.
+</p>
+
+	
+	<div class="well">
+  <h4> Player wrapping an internal wav file: </h4>
+<script>
+function playmusic() {
+ 
+ document.getElementById("audio1").play();
+ document.getElementById("play").innerHTML = "Resume";
+ document.getElementById("pause").disabled=false;
+ document.getElementById("startover").disabled=false;
+ document.getElementById("play").disabled=true;
+}
+function changeVolume(player, level){
+	player.volume = (level / 100);
+	document.getElementById("volumeLevel").innerHTML = level + "%";
+}
+function pausePlay(player){
+	player.pause();
+	document.getElementById("play").disabled=false;
+	document.getElementById("pause").disabled=true;
+}
+
+function setStartPoint(player, seconds){
+	player.currentTime = seconds;
+	player.pause();
+	document.getElementById("pause").disabled=true;
+	document.getElementById("startover").disabled=true;
+	document.getElementById("play").disabled=false;
+	document.getElementById("play").innerHTML = "Play";
+}
+</script>
+ 
+<body onload="document.getElementById('audio1').volume = .5;">
+ <div style="margin-left:5px;">
+  
+  <p>Use the buttons to control the player. Set the volume level using the slider. If it is not present, then type the desired volume level (0-100), and press tab. </p>
+  
+
+  <audio id="audio1">
+    <source src="Music/HAL.wav" type="audio/wav" />
+Your browser does not support the audio element
+  </audio>
+  <br>
+</div>
+<form name="formvolume" id="formvolume" >
+<p><input name="volume" id="volume" type="range" 
+min="0" max="100" step="5" maxlength="3" value="50"
+onChange="changeVolume(audio1, volume.value);" /><label for="volume" id="volumeLevel">50%</label></p>
+</form>
+<button id="play" onclick="playmusic();">Play</button>
+<button id="pause" disabled onclick="pausePlay(audio1);">Pause</button>
+<button id="startover" disabled onclick="setStartPoint(audio1, 0);">Start Over</button>
+</div>
+
+
+<div class="row">
+  <div class="span12" style="background-color:Orange;">Sonic arts: taking the pressure of the definition of music and non music</div>
+ </div>  
+<br>
+  <h4> Sounds I like </h4>
+  <p> John Cage is here 
+  <a href="https://soundcloud.com/ooze/john-cage-is-here-master" target="_blank">[Master] </a></p>
+  <quote> "There is no such this and an empty space or an empty time. There is always something to see, something to hear. In fact, try as we may to make silence, we cannot." <em>John Cage</em> </quote>
+  <br><br>
+<!-- #bbinclude "includes/soundcloudembed.html"
+#id#="2F21199445"
+-->
+<iframe class="my-soundcloud-embed" id="my-soundcloud-id-2F21199445" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F21199445"></iframe>
+
+
+<!-- end bbinclude -->
+<!-- #bbinclude "includes/soundcloudembed.html"
+#id#="2F49029587"
+-->
+<iframe class="my-soundcloud-embed" id="my-soundcloud-id-2F49029587" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49029587"></iframe>
+
+
+<!-- end bbinclude -->
+
+
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F7882182"></iframe>
+
+
+
+<!-- #bbinclude "includes/footer.html" -->
+    </div> <!-- end of container div -->
+  </body>
+</html>
+<!-- end bbinclude -->
+    

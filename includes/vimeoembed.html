@@ -1,0 +1,28 @@
+
+<div class="media my-vimeo-embed">
+  <a class="pull-left" href="#">    
+    <iframe class="media-object" src="http://player.vimeo.com/video/#id#?color=ff3333" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen title="http://vimeo.com/#id#"></iframe>
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading" id="my-vimeo-embed-title-#id#"></h4>
+    
+    <div id="my-vimeo-embed-#id#"><noscript>Watch my great film on Vimeo at  http://vimeo.com/#id#</noscript></div>
+    
+ <script>
+$.getJSON('http://vimeo.com/api/v2/video/#id#.json', function(data) {
+  console.log(data);
+  
+  var my_title = data[0].title;
+  var my_description = data[0].description;
+  var my_duration_in_seconds = data[0].duration;
+  var my_width = data[0].width;
+  var my_height = data[0].height;
+  
+  $('#my-vimeo-embed-title-#id#').append(my_title);  
+  $('#my-vimeo-embed-#id#').append('<p>' + my_description + ' <time>' + my_duration_in_seconds + ' seconds</time></p>');
+  
+});
+</script>
+
+  </div>
+</div>
